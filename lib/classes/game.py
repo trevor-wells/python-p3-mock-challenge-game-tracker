@@ -24,9 +24,16 @@ class Game:
     def players(self, new_player=None):
         from classes.player import Player
         if isinstance(new_player, Player):
-            for result in self._results:
-                new_player.results(result)
-        return new_player.results()
+            self._players.append(new_player)
+        return self._players
+       
     
     def average_score(self, player):
-        pass
+        my_sum = 0
+        num_scores = 0
+        for result in player._results:
+            if result.game == self:
+                my_sum += result.score
+                num_scores += 1
+        my_sum = my_sum / num_scores
+        return my_sum
