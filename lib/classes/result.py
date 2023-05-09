@@ -7,7 +7,9 @@ class Result:
         self.game = game
         self.score = score
         player.results(self)
-        
+        game.results(self)
+        game.players(self)
+
     @property
     def score(self):
         return self._score

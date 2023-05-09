@@ -29,8 +29,8 @@ class TestGame:
         '''Cannot change the title of the game'''
         game = Game("Skribbl.io")
         
-        # with pytest.raises(Exception):
-        #     game.title = "not Skribbl.io"
+        with pytest.raises(Exception):
+            game.title = "not Skribbl.io"
 
     def test_has_many_results(self):
         '''Game has many results.'''

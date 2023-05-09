@@ -22,7 +22,6 @@ class Player:
             self._results.append(new_result)
         return self._results
         
-    
     def games_played(self, new_game=None):
         from classes.game import Game
         pass
